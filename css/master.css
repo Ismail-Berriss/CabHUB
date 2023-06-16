@@ -17,15 +17,16 @@ body {
     font-family: LatoBlack;
 }
 /* End Global Rules */
-/* Start Landing */
-.landing {
+/* Start Landing Page */
+.landing-page {
     min-height: 100vh;
     background-image: url("../imgs/decry-yae-WnoQ2nK0p_w-unsplash.jpg");
     background-size: cover;
     position: relative;
+    transition: 0.3s;
 }
-.landing .overlay {
-    background-color: rgba(0, 0, 0, 0.9);
+.landing-page .overlay {
+    background-color: rgba(0, 0, 0, 0.93);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -33,7 +34,7 @@ body {
     top: 0;
     z-index: 1;
 }
-.landing .header-area {
+.landing-page .header-area {
     position: relative;
     z-index: 3;
     color: #fff;
@@ -41,68 +42,77 @@ body {
     padding: 20px 50px;
     letter-spacing: 1px;
 }
-.landing .header-area .logo {
+.landing-page .header-area .logo {
     width: 300px;
     padding: 15px;
 }
-.landing .header-area .logo .main {
+.landing-page .header-area .logo .main {
     font-size: 30px;
 }
-.landing .header-area .logo .main span {
+.landing-page .header-area .logo .main span {
     color: var(--secondary-color);
 }
-.landing .header-area .logo .secondary {
+.landing-page .header-area .logo .secondary {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.landing .header-area .links {
+.landing-page .header-area .links {
     list-style: none;
     width: 100%;
     text-align: right;
     text-transform: uppercase;
     font-size: 13px;
 }
-.landing .header-area .links li {
+.landing-page .header-area .links li {
     display: inline-block;
 }
-.landing .header-area .links li a {
+.landing-page .header-area .links li a {
     color: inherit;
     text-decoration: none;
     padding: 6px 16px;
     border-radius: 13px;
+    transition: 0.3s;
 }
-.landing .header-area .links li a:hover {
+.landing-page .header-area .links li a:hover,
+.landing-page .header-area .links li a.active {
     color: #000;
     background-color: var(--main-color);
 }
-.landing .introduction {
+.landing-page .introduction {
     position: relative;
     width: 100%;
     text-align: center;
     color: #fff;
     z-index: 3;
+    margin-top: 40px;
 }
-.landing .introduction p:first-child {
-    text-transform: uppercase;
-    color: var(--main-color);
+.landing-page .introduction p {
     margin: 0;
+    text-transform: uppercase;
+}
+.landing-page .introduction p:first-child {
+    color: var(--main-color);
     font-size: 28px;
 }
-.landing .introduction p:last-child {
+.landing-page .introduction .number {
     letter-spacing: 1px;
     font-size: 50px;
-    margin: 0;
 }
-/* End Landing */
-img {
+.landing-page .introduction p:last-child {
+    letter-spacing: 12px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.landing-page .taxi {
     position: absolute;
     top: 85%;
-    z-index: 1;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 680px;
+    z-index: 2;
 }
+/* End Landing Page */
 /* Start Booking */
 .booking {
     min-height: 100vh;
