@@ -17,6 +17,37 @@ ul {
     list-style: none;
 }
 /* End Global Rules */
+/* Start Componants */
+.container {
+    padding-left: 150px;
+    padding-right: 150px;
+    margin: auto;
+}
+.main-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+.main-header h2 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 30px;
+    color: var(--main-color);
+}
+.main-header h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 40px;
+}
+.more {
+    border: none;
+    border-radius: 7px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+/* End Componants */
 /* Start Settings Box */
 .settings-box {
     position: fixed;
@@ -206,9 +237,10 @@ ul {
 /* End Landing Page */
 /* Start Booking */
 .booking {
-    min-height: 100vh;
     background-color: var(--main-color);
-    padding: 0 150px;
+}
+.booking .container {
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -228,15 +260,8 @@ ul {
     font-size: 40px;
     margin-top: 10px;
 }
-.booking .text .more {
-    border: none;
-    border-radius: 7px;
-    background-color: #000;
-    color: #fff;
-    padding: 10px 30px;
-    text-transform: uppercase;
-    font-weight: 900;
-    margin-top: 30px;
+.booking .text p {
+    margin-bottom: 46px;
 }
 .booking .book {
     flex-basis: 35%;
@@ -284,3 +309,72 @@ ul {
     font-weight: 900;
 }
 /* End Booking */
+/* Start Tariffs */
+.tariffs {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.tariffs .content {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+.tariffs .content .box {
+    background-color: #f4f3f1;
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+    padding: 80px 25px 20px;
+}
+.tariffs .content .special {
+    background-color: var(--main-color);
+}
+.tariffs .content .special::before {
+    content: "";
+    position: absolute;
+    border-width: 50px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%) rotateZ(45deg);
+}
+.tariffs .content .special .star {
+    position: absolute;
+    color: var(--main-color);
+    bottom: 12px;
+    right: 7px;
+    font-size: 25px;
+}
+.tariffs .content .box img {
+    position: absolute;
+    background-color: transparent;
+    width: 270px;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tariffs .content .box .text h2 {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+.tariffs .content .box .text h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: var(--main-color);
+}
+.tariffs .content .special .text h1 {
+    color: #000;
+}
+.tariffs .content .box .text .more {
+    background-color: var(--main-color);
+    color: #000;
+}
+.tariffs .content .special .text .more {
+    background-color: #000;
+    color: #fff;
+}
+/* End Tariffs */
