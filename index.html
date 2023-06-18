@@ -6,13 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CabHUB</title>
   <link rel="shortcut icon" href="imgs/PNGPIX-COM-Austin-Yellow-BMW-M4-Car-PNG-Image.png" type="image/x-icon">
-  <!-- Main CSS File -->
-  <link rel="stylesheet" href="css/master.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
   <!-- Normalize.css -->
   <link rel="stylesheet" href="css/normalize.css">
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="css/master.css">
+  <!-- Google Fonts - Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+  <!-- Start Setting Box -->
+  <div class="settings-box">
+    <div class="gear-container">
+      <i class="gear fa-solid fa-gear"></i>
+    </div>
+    <div class="settings-container">
+      <div class="option-box">
+        <h4>Colors</h4>
+        <ul class="colors-list">
+          <li class="active" data-color="#fec524"></li>
+          <li data-color="#e91e63"></li>
+          <li data-color="#009688"></li>
+          <li data-color="#03a9f4"></li>
+          <li data-color="#4caf50"></li>
+        </ul>
+      </div>
+      <div class="option-box">
+        <h4>Random Backgrounds</h4>
+        <div class="random-backgrounds">
+          <span class="yes active" data-background="yes">Yes</span>
+          <span class="no" data-background="no">No</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Setting Box -->
 
   <!-- Start Landing Page -->
   <div class="landing-page">
@@ -41,10 +74,42 @@
   <!-- End Landing Page -->
   <!-- Start Booking -->
   <div class="booking">
-
+    <div class="text">
+      <h3>Best in city</h3>
+      <h1>Trusted cab service in new york</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi architecto deleniti obcaecati nisi. Blanditiis
+        provident perspiciatis eligendi eaque alias, quibusdam harum quam qui ea minima delectus molestiae aliquid fuga
+        hic! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ullam, sed reiciendis non maxime eum sequi
+        iusto ducimus autem perspiciatis?</p>
+      <button class="more">Read More</button>
+    </div>
+    <div class="book">
+      <h2>Book a <span>cab</span></h2>
+      <form action="">
+        <div class="input">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="text" name="phone" placeholder="Phone" />
+        </div>
+        <div class="input">
+          <input type="text" name="when" placeholder="When" />
+          <input type="text" name="time" placeholder="Time" />
+        </div>
+        <div class="input">
+          <input type="text" name="start" placeholder="Start" />
+          <input type="text" name="end" placeholder="End" />
+        </div>
+        <div class="input">
+          <input type="text" name="vehicle" placeholder="Choose Vehicle" />
+        </div>
+        <div class="submit">
+          <input type="submit" value="SUBMIT" />
+        </div>
+      </form>
+    </div>
   </div>
   <!-- End Booking -->
 
+  <script src="js/all.min.js"></script>
   <script src="js/master.js"></script>
 </body>
 
