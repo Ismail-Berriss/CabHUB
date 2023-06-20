@@ -15,17 +15,32 @@ body {
 }
 ul {
     list-style: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
 }
 /* End Global Rules */
 /* Start Componants */
 .container {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 100px;
+    padding-right: 100px;
     margin: auto;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
 .main-header {
     text-align: center;
     text-transform: uppercase;
+    position: relative;
+    z-index: 3;
 }
 .main-header h2 {
     margin: 0;
@@ -38,14 +53,21 @@ ul {
     font-weight: 900;
     font-size: 40px;
 }
+.main-header h1.white {
+    color: #fff;
+}
+.main-header h1.black {
+    color: #000;
+}
 .more {
     border: none;
     border-radius: 7px;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--main-color);
+    color: #000;
     padding: 10px 30px;
     text-transform: uppercase;
     font-weight: 900;
+    cursor: pointer;
 }
 /* End Componants */
 /* Start Settings Box */
@@ -85,7 +107,6 @@ ul {
 }
 .settings-box .colors-list {
     text-align: center;
-    padding: 0;
     margin: 10px 0 0;
 }
 .settings-box .colors-list li {
@@ -148,7 +169,7 @@ ul {
     font-weight: 700;
     transition: 0.3s;
 }
-.landing-page .overlay {
+/* .landing-page .overlay {
     background-color: rgba(0, 0, 0, 0.93);
     position: absolute;
     width: 100%;
@@ -156,7 +177,7 @@ ul {
     left: 0;
     top: 0;
     z-index: 1;
-}
+} */
 .landing-page .header-area {
     position: relative;
     z-index: 3;
@@ -238,9 +259,10 @@ ul {
 /* Start Booking */
 .booking {
     background-color: var(--main-color);
+    padding-top: 130px;
+    padding-bottom: 130px;
 }
 .booking .container {
-    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -262,6 +284,10 @@ ul {
 }
 .booking .text p {
     margin-bottom: 46px;
+}
+.booking .text .more {
+    background-color: #000;
+    color: #fff;
 }
 .booking .book {
     flex-basis: 35%;
@@ -307,12 +333,13 @@ ul {
     padding: 15px 0;
     border-radius: 8px;
     font-weight: 900;
+    cursor: pointer;
 }
 /* End Booking */
 /* Start Tariffs */
 .tariffs {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 .tariffs .content {
     margin-top: 50px;
@@ -369,12 +396,265 @@ ul {
 .tariffs .content .special .text h1 {
     color: #000;
 }
-.tariffs .content .box .text .more {
-    background-color: var(--main-color);
-    color: #000;
-}
 .tariffs .content .special .text .more {
     background-color: #000;
     color: #fff;
 }
 /* End Tariffs */
+/* Start Features */
+.features {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url("../imgs/angela-compagnone-p1PF8HtB2I4-unsplash.jpg");
+    background-size: cover;
+}
+.features .content {
+    position: relative;
+    z-index: 3;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.features .content .feature-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 150px;
+    row-gap: 70px;
+}
+.features .content .feature {
+    display: flex;
+    gap: 30px;
+}
+.features .content .feature .feature-icon {
+    background-color: var(--main-color);
+    border-radius: 50%;
+    min-width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.features .content .feature .feature-icon .icon {
+    color: black;
+}
+.features .content .feature .feature-text h4 {
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.features .content .feature .feature-text p {
+    color: #fff;
+}
+.features .content .button-container {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* End Features */
+/* Start Download */
+.download {
+    padding-top: 100px;
+    /* padding-bottom: 100px; */
+}
+.download .content {
+    margin: 100px 100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.download .content .text {
+    flex-basis: 50%;
+}
+.download .content .text p:first-child {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.4;
+}
+.download .content .text p:nth-child(2) {
+    font-size: 16px;
+    line-height: 1.2;
+    width: 330px;
+}
+.download .content .text .links {
+    margin-top: 70px;
+    display: flex;
+    gap: 35px;
+}
+.download .content .text .links img {
+    width: 180px;
+}
+/* End Download */
+/* Start Testimonials */
+.testimonials {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url("../imgs/Testimonials.png");
+    background-size: cover;
+}
+.testimonials .content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    margin-top: 100px;
+    z-index: 3;
+}
+.testimonials .content .box {
+    position: relative;
+    padding: 35px 50px;
+    background-color: #000;
+    border-radius: 50px;
+}
+.testimonials .content .box::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: 20%;
+    border-width: 15px;
+    border-style: solid;
+    border-color: black transparent transparent black;
+}
+.testimonials .content .box:nth-child(2)::before {
+    right: 75%;
+    border-color: black black transparent transparent;
+}
+.testimonials .content .box p {
+    color: #fff;
+    margin: 0;
+    font-size: 17px;
+    letter-spacing: 1.4;
+}
+.testimonials .content .box .profile {
+    margin-top: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+.testimonials .content .box .profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.testimonials .content .box .profile .text {
+    color: #fff;
+}
+.testimonials .content .box .profile .text h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--main-color);
+}
+.testimonials .content .box .profile .text h3 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 18px;
+}
+/* End Testimonials */
+/* Start Call */
+.call {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--main-color);
+    text-align: center;
+}
+.call p {
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0;
+}
+.call p:first-child {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.call p:nth-child(2) {
+    font-size: 70px;
+}
+/* End Call */
+/* Start Footer */
+.footer {
+    position: relative;
+    background-image: url("../imgs/frank-weichkopf-re726QcSzzQ-unsplash.jpg");
+    background-size: cover;
+}
+.footer .content {
+    position: relative;
+    z-index: 3;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    color: #fff;
+}
+.footer .content .box {
+    flex: 1;
+}
+.footer .content .box h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    border-bottom: 5px solid var(--main-color);
+    margin: 0 0 40px;
+    padding-bottom: 40px;
+}
+.footer .content .box p {
+    font-size: 17px;
+    margin: 0 0 20px;
+}
+.footer .content .box .about .socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.footer .content .box .about .socials li a {
+    color: var(--main-color);
+    font-size: 20px;
+}
+.footer .content .box .download-f .links li {
+    margin-bottom: 20px;
+}
+.footer .content .box .download-f .links li a {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .content .box .download-f .links li a span {
+    color: var(--main-color);
+    font-size: 18px;
+}
+.footer .content .box .download-f .links li a .icon {
+    color: #fff;
+    font-size: 28px;
+}
+.footer .content .box .download-f .links li:nth-child(2) a .icon {
+    padding-right: 5px;
+}
+.footer .content .box .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer .content .box .contacts li {
+    display: flex;
+    gap: 30px;
+}
+.footer .copyright {
+    position: relative;
+    z-index: 3;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Start Footer */
