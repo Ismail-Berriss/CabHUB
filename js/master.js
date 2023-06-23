@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------------------------------------------------------- */
 
 // Check if a main color exists in the local storage
-let mainColors = localStorage.getItem("color_option");
+let mainColors = localStorage.getItem("colorOption");
 
 if (mainColors !== null) {
     document.documentElement.style.setProperty("--main-color", mainColors);
@@ -41,7 +41,7 @@ colorsLi.forEach((li) => {
         );
 
         // Set the color on the local storage
-        localStorage.setItem("color_option", e.target.dataset.color);
+        localStorage.setItem("colorOption", e.target.dataset.color);
 
         handleActive(e);
     });
@@ -191,5 +191,17 @@ bulletsSpan.forEach((span) => {
         }
     });
 });
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+// Reset Button
+document.querySelector(".reset-options").onclick = () => {
+    localStorage.removeItem("colorOption");
+    localStorage.removeItem("backgroundOption");
+    localStorage.removeItem("bulletsOption");
+
+    // Reload the window
+    window.location.reload();
+};
 
 /* ------------------------------------------------------------------------------------------------------------------------- */
