@@ -1,3 +1,5 @@
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
 // Check if a main color exists in the local storage
 let mainColors = localStorage.getItem("color_option");
 
@@ -41,13 +43,7 @@ colorsLi.forEach((li) => {
         // Set the color on the local storage
         localStorage.setItem("color_option", e.target.dataset.color);
 
-        // Remove the active class from all children
-        e.target.parentElement.querySelectorAll(".active").forEach((ele) => {
-            ele.classList.remove("active");
-        });
-
-        // Add the active class to the clicked li
-        e.target.classList.add("active");
+        handleActive(e);
     });
 });
 
@@ -63,23 +59,39 @@ const randomBackgroundEle = document.querySelectorAll(
     ".random-backgrounds span"
 );
 
+let backgroundLocalItem = localStorage.getItem("backgroundOption");
+
+if (backgroundLocalItem !== null) {
+    randomBackgroundEle.forEach((span) => {
+        span.classList.remove("active");
+    });
+
+    if (backgroundLocalItem === "true") {
+        backgroundOption = true;
+        document
+            .querySelector(".random-backgrounds .yes")
+            .classList.add("active");
+    } else {
+        backgroundOption = false;
+        document
+            .querySelector(".random-backgrounds .no")
+            .classList.add("active");
+    }
+}
+
 // Loop on all spans
 randomBackgroundEle.forEach((span) => {
     // Click on every span
     span.addEventListener("click", (e) => {
-        // Remove the active class from all spans
-        e.target.parentElement.querySelectorAll(".active").forEach((ele) => {
-            ele.classList.remove("active");
-        });
-
-        // Add the active class to the clicked span
-        e.target.classList.add("active");
+        handleActive(e);
 
         if (e.target.dataset.background === "yes") {
             backgroundOption = true;
+            localStorage.setItem("backgroundOption", "true");
             randomizeImgs();
         } else {
             backgroundOption = false;
+            localStorage.setItem("backgroundOption", "false");
             clearInterval(backgroundInterval);
         }
     });
@@ -119,11 +131,64 @@ randomizeImgs();
 // Select all bullets
 const allBullets = document.querySelectorAll(".nav-bullets .bullet");
 
-allBullets.forEach((bullet) => {
-    bullet.addEventListener("click", (e) => {
-        document.querySelector(e.target.dataset.section).scrollIntoView({
-            behavior: "smooth",
+function scrollToSection(elements) {
+    elements.forEach((ele) => {
+        ele.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior: "smooth",
+            });
         });
+    });
+}
+
+scrollToSection(allBullets);
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+// Handle Active State
+function handleActive(eve) {
+    // Remove the active class from all children
+    eve.target.parentElement.querySelectorAll(".active").forEach((ele) => {
+        ele.classList.remove("active");
+    });
+
+    // Add the active class to the clicked li
+    eve.target.classList.add("active");
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+let bulletsSpan = document.querySelectorAll(".bullets-option span");
+
+let bulletsContainer = document.querySelector(".nav-bullets");
+
+let bulletLocalItem = localStorage.getItem("bulletsOption");
+
+if (bulletLocalItem !== null) {
+    bulletsSpan.forEach((span) => {
+        span.classList.remove("active");
+    });
+
+    if (bulletLocalItem === "block") {
+        bulletsContainer.style.display = "block";
+        document.querySelector(".bullets-option .yes").classList.add("active");
+    } else {
+        bulletsContainer.style.display = "none";
+        document.querySelector(".bullets-option .no").classList.add("active");
+    }
+}
+
+bulletsSpan.forEach((span) => {
+    span.addEventListener("click", (e) => {
+        handleActive(e);
+        if (span.dataset.display === "show") {
+            bulletsContainer.style.display = "block";
+            localStorage.setItem("bulletsOption", "block");
+        } else {
+            bulletsContainer.style.display = "none";
+            localStorage.setItem("bulletsOption", "none");
+        }
     });
 });
 

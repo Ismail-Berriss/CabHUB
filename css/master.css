@@ -80,6 +80,7 @@ a {
     min-height: 100vh;
     transition: 0.3s;
     z-index: 1000;
+    border: 1px solid #eee;
 }
 .settings-box.open {
     left: 0;
@@ -136,10 +137,10 @@ a {
 .settings-box .colors-list li:nth-child(5) {
     background-color: #4caf50;
 }
-.settings-box .random-backgrounds .yes,
-.settings-box .random-backgrounds .no {
+.settings-box .option-box .yes,
+.settings-box .option-box .no {
     width: 50px;
-    background-color: #333;
+    background-color: var(--main-color);
     color: #fff;
     margin-top: 10px;
     display: inline-block;
@@ -150,14 +151,8 @@ a {
     opacity: 0.5;
     cursor: pointer;
 }
-.settings-box .random-backgrounds span.active {
+.settings-box .option-box span.active {
     opacity: 1;
-}
-.settings-box .random-backgrounds .yes {
-    background-color: #4caf50;
-}
-.settings-box .random-backgrounds .no {
-    background-color: #f44336;
 }
 /* End Settings Box */
 /* Start Nav Bullets */
